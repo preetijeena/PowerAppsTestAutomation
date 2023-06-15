@@ -123,13 +123,13 @@ namespace Microsoft.PowerApps.TestAutomation.Api
                 }
                 else
                 {
-                    Thread.Sleep(1000);
+                    Thread.Sleep(2000);
 
                     driver.FindElement(By.XPath(Elements.Xpath[Reference.Login.LoginPassword])).SendKeys(password.ToUnsecureString());
                     driver.FindElement(By.XPath(Elements.Xpath[Reference.Login.LoginPassword])).SendKeys(Keys.Tab);
                     driver.FindElement(By.XPath(Elements.Xpath[Reference.Login.LoginPassword])).Submit();
 
-                    Thread.Sleep(1000);
+                    Thread.Sleep(2000);
 
                     var staySignedInVisible = driver.WaitUntilVisible(By.XPath(Elements.Xpath[Reference.Login.StaySignedIn]), new TimeSpan(0, 0, 5));
 
@@ -139,12 +139,12 @@ namespace Microsoft.PowerApps.TestAutomation.Api
                     }
 
                     driver.WaitUntilVisible(By.XPath(Elements.Xpath[Reference.Login.MainPage])
-                        , new TimeSpan(0, 2, 0),
+                        , new TimeSpan(0, 5, 0),
                         e =>
                         {
                             try
                             {
-                                e.WaitUntilVisible(By.ClassName("apps-list"), new TimeSpan(0, 0, 30));
+                                e.WaitUntilVisible(By.ClassName("apps-list"), new TimeSpan(0, 0, 60));
                             }
                             catch (Exception exc)
                             {
@@ -172,7 +172,7 @@ namespace Microsoft.PowerApps.TestAutomation.Api
                     {
                         try
                         {
-                            e.WaitUntilVisible(By.ClassName("apps-list"), new TimeSpan(0, 0, 30));
+                            e.WaitUntilVisible(By.ClassName("apps-list"), new TimeSpan(0, 0, 60));
                         }
                         catch (Exception exc)
                         {
@@ -199,7 +199,7 @@ namespace Microsoft.PowerApps.TestAutomation.Api
                 driver.Navigate().GoToUrl(uri);
 
                 driver.WaitUntilVisible(By.XPath(Elements.Xpath[Reference.Login.MainPage])
-                                    , new TimeSpan(0, 3, 0),
+                                    , new TimeSpan(0, 5, 0),
                                     e =>
                                     {
                                         try
