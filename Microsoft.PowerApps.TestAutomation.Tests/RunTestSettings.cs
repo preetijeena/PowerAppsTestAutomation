@@ -31,7 +31,7 @@ namespace Microsoft.PowerApps.TestAutomation.Tests
             BrowserType = Type,
             PrivateMode = UsePrivateMode ?? true,
             FireEvents = false,
-            Headless = true,
+            Headless = false,
             UserAgent = false,
             //DriversPath = Path.IsPathRooted(DriversPath) ? DriversPath : Path.Combine(Directory.GetCurrentDirectory(), DriversPath)
 
