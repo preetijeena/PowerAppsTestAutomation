@@ -68,10 +68,11 @@ namespace Microsoft.PowerApps.TestAutomation.Tests
                 var testUrlList = appBrowser.TestAutomation.GetTestURLs(_testAutomationURLFilePath);
                 // Track total number of TestURLs
                 int testUrlCount = testUrlList.Value.Count();
-
+                 Console.WriteLine($"Preeti Added---TestURLCount: {testUrlCount}");
                 foreach (Uri testUrl in testUrlList?.Value)
                 {
                     // Test URL
+                     Console.WriteLine($"Preeti Added---TestURL: {testUrl}");
                     _testAutomationUri = testUrl;
                     testRunCounter += 1;
 
